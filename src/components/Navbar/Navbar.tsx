@@ -1,15 +1,23 @@
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import FormatAlignRightOutlinedIcon from "@mui/icons-material/FormatAlignRightOutlined";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+ 
 
 const Navbar = () => {
+
+  
+
+ 
+
   return (
-    <nav>
+     <>
+     
+     <nav>
       <div className="w-full bg-white h-16 pl-[.5rem] pt-[0rem] pr-[0rem] pt-[0rem] shadow-[0_2px_1px_-1px_#0003,0_1px_1px_#00000024,0_1px_3px_#0000001f]">
-        <div className="w-full h-[64px]">
-          <div className=" w-full h-[64px]  flex items-center justify-between">
+        <div className="  w-full h-[64px]">
+          <div className="  !pl-[.5rem] w-full h-[64px]  flex items-center justify-between">
             {/* Left side */}
-            <div className=" cursor-pointer  w-[48px] h-[48px] flex items-center justify-center">
+            <div  onClick={() => setOpenSidebar(true)}  className=" cursor-pointer p-[.75rem]  w-[48px] h-[48px] flex items-center justify-center">
               <MenuOutlinedIcon className="w-[24px] h-[24px] text-[rgb(0 0 0 / 87%)] font-normal text-[1.5rem] leading-1 tracking-normal" />
             </div>
 
@@ -46,7 +54,14 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+       
+      
     </nav>
+
+
+
+     </>
   );
 };
 
