@@ -1,6 +1,9 @@
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import FormatAlignRightOutlinedIcon from "@mui/icons-material/FormatAlignRightOutlined";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
+import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
+import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -123,16 +126,49 @@ const Navbar = () => {
             {/* Profile & Routes */}
 
             <div className="w-[280px] h-[469px] flex-auto items-start content-start">
-              <div className="overflow-hidden w-inherit h-inherit max-w-inherit max-h-inherit"></div>
+              <div className="overflow-hidden w-inherit h-inherit max-w-inherit max-h-inherit">
+                {/* Profile Div */}
+
+                <div className="w-full h-[200px] flex flex-col items-center bg-[#212939] pt-[.5rem] pb-[1rem]">
+                  <img
+                    src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2023/02/11/24225ddf-5db6-42ce-b7fe-83f0ef924c0f_8ac2e259.jpg?itok=b1hY4hx9&v=1676104227"
+                    alt=""
+                    className="block h-[72px] w-[72px] rounded-[50%] object-cover "
+                  />
+                  <h4 className="whitespace-nowrap !mt-[.75rem] text-[1rem] text-white">
+                    David Smith
+                  </h4>
+
+                  <h5 className="whitespace-nowrap text-[#ffffffb3]   !mb-[.75rem] text-[.75rem]">
+                    david.smith@example.com
+                  </h5>
+
+                  <div className="flex flex-row whitespace-nowrap items-center justify-center  ">
+                    <div className="w-[48px] h-[48px] flex items-center justify-center">
+                      <div className="w-[32px] h-[32px] leading-[2rem] flex items-center justify-center">
+                        <AssignmentOutlinedIcon className="w-[18px] h-[18px] text-[1.125rem] leading-[1.125rem] text-white" />
+                      </div>
+                    </div>
+
+                    <div className="w-[48px] h-[48px] flex items-center justify-center">
+                      <div className="w-[32px] h-[32px] leading-[2rem] ml-[.25rem] flex items-center justify-center">
+                        <DateRangeOutlinedIcon className="w-[18px] h-[18px] text-[1.125rem] leading-[1.125rem] text-white" />
+                      </div>
+                    </div>
+
+
+                    <div className="w-[48px] h-[48px] flex items-center justify-center">
+                      <div className="w-[32px] h-[32px] leading-[2rem] ml-[.25rem] flex items-center justify-center">
+                        <ExitToAppOutlinedIcon className="w-[18px] h-[18px] text-[1.125rem] leading-[1.125rem] text-white" />
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <button
-            className="bg-green-300 !px-[1rem] !py-[.75rem] rounded-[8px] cursor-pointer"
-            onClick={() => setOpenSidebar(false)}
-          >
-            Close
-          </button>
         </aside>
       </nav>
     </>
