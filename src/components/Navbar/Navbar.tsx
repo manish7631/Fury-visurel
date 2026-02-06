@@ -1,15 +1,152 @@
+import React, { useState } from "react";
+
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import FormatAlignRightOutlinedIcon from "@mui/icons-material/FormatAlignRightOutlined";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
-import { useState } from "react";
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+ 
+ import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
+ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+ import LayersOutlinedIcon from '@mui/icons-material/LayersOutlined';
+ import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+ import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined';
+ import FormatShapesOutlinedIcon from '@mui/icons-material/FormatShapesOutlined';
+ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+ import ViewCompactOutlinedIcon from '@mui/icons-material/ViewCompactOutlined';
+ import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
+ import PictureInPictureAltOutlinedIcon from '@mui/icons-material/PictureInPictureAltOutlined';
+ import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
+ 
+
+const AllRoutes = [
+  {
+    parentRouteName: "Apps",
+    parentRoutes: [
+      {
+        icon: <DashboardOutlinedIcon />,
+        routeName: "Dashboard",
+        count: null,
+        accordian: null,
+        activeRoute: true,
+      },
+      {
+        icon: <AssignmentOutlinedIcon />,
+        routeName: "All-In-One Table",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      {
+        icon: <DateRangeOutlinedIcon/>,
+        routeName: "Calendar",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      {
+        icon: <InboxOutlinedIcon />,
+        routeName: "Inbox",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      {
+        icon: <ChatOutlinedIcon />,
+        routeName: "Chat",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+    ],
+  },
+  {
+    parentRouteName: "User Interface",
+    parentRoutes: [
+      {
+        icon: <LayersOutlinedIcon />,
+        routeName: "Components",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      {
+        icon: <DescriptionOutlinedIcon />,
+        routeName: "Forms",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      {
+        icon: <MouseOutlinedIcon />,
+        routeName: "Drag & Drop",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      {
+        icon: <FormatShapesOutlinedIcon />,
+        routeName: "WYSIWYG Editor",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+    ],
+  },
+  {
+    parentRouteName: "Pages",
+    parentRoutes: [
+      {
+        icon: <LockOutlinedIcon />,
+        routeName: "Authentication",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+       {
+        icon: <ViewCompactOutlinedIcon />,
+        routeName: "Page Layouts",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+       {
+        icon: <WatchLaterOutlinedIcon />,
+        routeName: "Coming Soon",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+       {
+        icon: <PictureInPictureAltOutlinedIcon />,
+        routeName: "Blank",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+       {
+        icon: <GradeOutlinedIcon />,
+        routeName: "Material Icons",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+       {
+        icon: <MenuOutlinedIcon />,
+        routeName: "Multi-Level Menu",
+        count: null,
+        accordian: null,
+        activeRoute: false,
+      },
+      
+    ],
+  },
+];
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
-
-  console.log("OpenSidebar", openSidebar);
 
   return (
     <>
@@ -68,7 +205,7 @@ const Navbar = () => {
          transition-transform duration-300 ease-in-out
            ${openSidebar === true ? "translate-x-0" : "-translate-x-full"}`}
         >
-          <div className="flex flex-col h-[100%] w-[280px] bg-[#283144]">
+          <div className="flex flex-col h-[100%] w-[280px] bg-[#283144] ">
             {/* Header */}
             <div
               className="w-[280px] h-[64px] flex flex-row items-center bg-[#212939] !py-[0rem] !pr-[1.1253rem] !pl-[1.5rem]
@@ -123,9 +260,9 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Profile & Routes */}
+            {/* Profile   */}
 
-            <div className="w-[280px] h-[469px] flex-auto items-start content-start">
+            <div className="w-[280px] h-[469px] flex-auto items-start content-start  overflow-y-scroll">
               <div className="overflow-hidden w-inherit h-inherit max-w-inherit max-h-inherit">
                 {/* Profile Div */}
 
@@ -156,16 +293,56 @@ const Navbar = () => {
                       </div>
                     </div>
 
-
                     <div className="w-[48px] h-[48px] flex items-center justify-center">
                       <div className="w-[32px] h-[32px] leading-[2rem] ml-[.25rem] flex items-center justify-center">
                         <ExitToAppOutlinedIcon className="w-[18px] h-[18px] text-[1.125rem] leading-[1.125rem] text-white" />
                       </div>
                     </div>
-
-
                   </div>
                 </div>
+
+                {/* Routes */}
+
+                {AllRoutes.map((item, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      {" "}
+                      <div>
+                        <div className="uppercase !mt-[.5rem] !mb-[0.375rem] text-[#ffffffb3] text-[.75rem] font-medium !ml-[1.625rem] whitespace-nowrap">
+                          {item.parentRouteName}
+                        </div>
+                      </div>
+                      {item.parentRoutes.length > 0
+                        ? item.parentRoutes.map((el, index1) => {
+                            return (
+                              <div key={index1}>
+                                <div>
+                                  <a
+                                    className={`flex flex-row items-center  ${el.activeRoute === true ? "bg-[#1976d2]" : ""} text-[#fff] text-[0.875rem] 
+                font-normal h-[44px] !pl-[1.5rem] !pr-[1rem] relative cursor-pointer whitespace-nowrap
+                no-underline rounded-tr-[1.375rem] rounded-br-[1.375rem]
+                !mr-[.5rem]`}
+                                    href=""
+                                  >
+                                    <div
+                                      className="w-[22px] h-[22px] text-[1.375rem] leading-[22px] font-normal
+                         text-[#ffffff]"
+                                    >
+                                      {el.icon}
+                                    </div>
+
+                                    <span className="!pl-[1.5rem] text-[#fff] text-[0.875rem] font-normal">
+                                      {el.routeName}
+                                    </span>
+                                  </a>
+                                </div>
+                              </div>
+                            );
+                          })
+                        : null}
+                    </React.Fragment>
+                  );
+                })}
               </div>
             </div>
           </div>

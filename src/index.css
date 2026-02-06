@@ -11,3 +11,13 @@
 body{
    font-family: "Roboto", sans-serif;
 }
+
+ 
+ 
+ 
+::-webkit-scrollbar {
+  width:0px;
+  
+}
+
+ 
